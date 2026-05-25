@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-3">
         <div>
           <h2 className="text-2xl font-semibold tracking-[0.25em] text-[#D99A00]">
-            OHY’RI
+            HOY’RI
           </h2>
           <p className="mt-2 text-sm tracking-[0.35em] text-[#D8C3A5]">
             arquitectura
@@ -27,8 +27,8 @@ export default function Footer() {
             <Link href="/" className="hover:text-[#D99A00]">
               Inicio
             </Link>
-            <Link href="/nosotros" className="hover:text-[#D99A00]">
-              Nosotros
+            <Link href="/quienes_somos" className="hover:text-[#D99A00]">
+              Quienes Somos
             </Link>
             <Link href="/servicios" className="hover:text-[#D99A00]">
               Servicios
@@ -49,14 +49,14 @@ export default function Footer() {
 
           <div className="space-y-3 text-sm text-[#D8C3A5]">
             <p>Coquimbo / Chile</p>
-            <p>contacto@ohyriarquitectura.cl</p>
+            <p>contacto@hoyri-arquitectura.cl</p>
             <p>Instagram · WhatsApp · Correo</p>
           </div>
         </div>
       </div>
 
       <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-6 text-xs text-[#D8C3A5]/70">
-        © {new Date().getFullYear()} OHY’RI Arquitectura. Todos los derechos reservados.
+        © {new Date().getFullYear()} HOY’RI Arquitectura. Todos los derechos reservados.
       </div>
     </footer>
   )

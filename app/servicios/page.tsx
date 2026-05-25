@@ -23,16 +23,16 @@ const services = [
 
 export default function ServiciosPage() {
   return (
-    <main className="min-h-screen bg-[#050505] px-5 pb-20 pt-32 text-[#F5EFE6] sm:px-8 md:px-16 lg:px-20 lg:pt-40">
-      <section className="mx-auto max-w-7xl">
+    <main className="min-h-screen bg-[#050505] px-5 pb-20 pt-[17rem] text-[#F5EFE6] sm:px-8 md:px-16 lg:px-20">
+        <section className="mx-auto max-w-7xl">
         <p className="mb-4 text-xs uppercase tracking-[0.28em] text-[#D99A00] sm:text-sm sm:tracking-[0.4em]">
           Servicios
         </p>
 
-        <h1 className="max-w-4xl text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="max-w-4xl text-3xl font-semibold leading-[1.15] sm:text-4xl md:text-5xl lg:text-6xl">
           Soluciones arquitectónicas para cada etapa del proyecto.
         </h1>
-
+          
         <div className="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
           {services.map((service) => (
             <article

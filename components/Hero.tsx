@@ -4,9 +4,8 @@ import { motion } from 'motion/react'
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#050505] px-5 pb-20 pt-32 text-[#F5EFE6] sm:px-8 md:px-16 lg:px-20">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#050505] px-5 pb-20 pt-72 text-[#F5EFE6] sm:px-8 md:px-16 lg:px-20">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,#A85F2A,transparent_35%),linear-gradient(135deg,#050505,#2B2D30)]" />
-
       <div className="absolute right-[-180px] top-[-140px] h-[320px] w-[320px] rounded-full border border-[#D99A00]/20 sm:right-[-120px] sm:h-[380px] sm:w-[380px]" />
       <div className="absolute bottom-[-180px] left-[-180px] h-[360px] w-[360px] rounded-full border border-[#A85F2A]/30 sm:h-[440px] sm:w-[440px]" />
 
@@ -17,10 +16,10 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: 'easeOut' }}
       >
         <p className="mb-4 text-xs uppercase tracking-[0.28em] text-[#D99A00] sm:text-sm sm:tracking-[0.45em]">
-          OHY’RI Arquitectura
+          HOY’RI Arquitectura
         </p>
 
-        <h1 className="max-w-5xl text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 className="max-w-4xl text-3xl font-semibold leading-tight sm:text-4xl md:text-5xl lg:text-6xl">
           Arquitectura con identidad, materia y propósito.
         </h1>
 
