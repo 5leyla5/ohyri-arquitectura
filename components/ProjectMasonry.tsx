@@ -114,7 +114,7 @@ export default function ProjectMasonry() {
           {projects.map((project, index) => {
             const card = (
               <motion.article
-                className="group relative mb-6 break-inside-avoid overflow-hidden rounded-3xl border border-white/5 bg-[#111111] shadow-2xl transition duration-300 hover:-translate-y-1 hover:border-[#D99A00]/50 hover:shadow-[0_0_35px_rgba(217,154,0,0.35)]"
+                className="group relative mb-6 break-inside-avoid overflow-hidden rounded-3xl border border-[#2A2A2A] bg-[#0A0A0A] shadow-2xl transition duration-300 hover:-translate-y-1 hover:border-[#D9A300]/70 hover:shadow-[0_0_35px_rgba(217,163,0,0.30)]"
                 initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: index * 0.1 }}
@@ -129,24 +129,25 @@ export default function ProjectMasonry() {
                 <ProjectImageSlider project={project} />
 
                 <div className="relative z-20 p-5 sm:p-6">
-                  <p className="text-xs uppercase tracking-[0.22em] text-[#D99A00] sm:text-sm sm:tracking-[0.25em]">
+                  <p className="text-xs uppercase tracking-[0.22em] text-[#D9A300] sm:text-sm sm:tracking-[0.25em]">
                     {project.category}
                   </p>
 
-                  <h3 className="mt-2 text-xl font-semibold sm:text-2xl">
+                  <h3 className="mt-2 text-xl font-semibold text-[#F5F5F5] sm:text-2xl">
                     {project.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-6 text-[#D8C3A5]">
+                  <p className="mt-3 text-sm leading-6 text-[#D8D8D8]">
                     Proyecto desarrollado con enfoque en diseño, funcionalidad y
                     conexión con el entorno.
                   </p>
 
                   {project.slug && (
-                    <p className="mt-5 text-sm font-semibold text-[#D99A00]">
+                    <p className="mt-5 text-sm font-semibold text-[#D9A300]">
                       Ver galería →
                     </p>
-                  )}
+                    )
+                  }
                 </div>
               </motion.article>
             )

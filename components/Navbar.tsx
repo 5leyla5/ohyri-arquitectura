@@ -10,7 +10,11 @@ const links = [
   { name: 'Quiénes Somos', href: '/quienes-somos' },
   { name: 'Servicios', href: '/servicios' },
   { name: 'Proyectos', href: '/proyectos' },
-  { name: 'Sustentabilidad', href: 'https://www.arqsostenible.cl/', external: true },
+  {
+    name: 'Sustentabilidad',
+    href: 'https://www.arqsostenible.cl/',
+    external: true,
+  },
   { name: 'Contacto', href: '/contacto' },
 ]
 
@@ -19,54 +23,37 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#050505]/95 text-[#F5EFE6] backdrop-blur-xl">
-      {/* Parte superior del navbar */}
-        <div className="relative mx-auto flex h-44 max-w-7xl items-center justify-center px-5 sm:h-48 md:h-52 md:px-20">
-          {/* Logo centrado */}
-        <Link
-          href="/"
-          className="absolute left-1/2 flex -translate-x-1/2 items-center gap-6"
-        >
-          {/* GIF/planta al lado izquierdo */}
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-[#D9A300] bg-[#000000] text-[#F5F5F5] shadow-2xl">
+      <div className="mx-auto flex h-36 max-w-7xl items-center justify-between px-5 sm:px-8 md:h-40 lg:px-10 xl:px-0">
+        {/* Logo lado izquierdo */}
+        <Link href="/" className="flex items-center gap-1">
           <img
             src="/gifs/terra.gif"
-            alt="Planta OHY’RI"
-            className="h-16 w-16 rounded-full bg-[#F5EFE6] object-contain p-2 sm:h-30 sm:w-30"
+            alt="Ícono planta HOY’RI"
+            className="h-14 w-14 shrink-0 rounded-full border border-[#D9A300]/60 bg-[#F5F5F5] object-contain p-1 shadow-[0_0_18px_rgba(217,163,0,0.25)] md:h-16 md:w-16"
           />
 
-          {/* Texto logo */}
-          <div className="text-center">
-            <div className="text-3xl font-semibold tracking-[0.45em] text-[#D99A00] sm:text-4xl">
-              HOY’RI
-            </div>
-
-            <div className="mt-2 text-sm tracking-[0.65em] text-[#D8C3A5] sm:text-base">
-              arquitectura
-            </div>
-          </div>
+          <img
+            src="/logos/logo-hoyri-arq.jpg"
+            alt="Logo HOY’RI Arquitectura"
+            className="h-auto max-h-28 w-auto max-w-[340px] object-contain md:max-h-32 md:max-w-[430px]"
+          />
         </Link>
 
-        {/* Botón menú móvil */}
-        <button
-          className="absolute right-5 text-3xl text-[#F5EFE6] md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Abrir menú"
-        >
-          {isOpen ? '×' : '☰'}
-        </button>
-      </div>
+        {/* Separador dorado */}
+        <div className="mx-[clamp(0.75rem,2vw,2rem)] hidden h-20 w-px shrink-0 bg-[#D9A300]/70 lg:block" />
 
-      {/* Franja inferior con links en escritorio */}
-      <nav className="hidden border-t border-white/10 bg-[#6B3F1D]/80 md:block">
-        <div className="mx-auto flex h-10 max-w-7xl items-center justify-center gap-12 px-16">
+        {/* Navegación escritorio */}
+        <nav className="hidden min-w-0 flex-1 items-center justify-end gap-[clamp(0.45rem,1.2vw,2rem)] lg:flex">
           {links.map((link) => {
             const active = pathname === link.href
-            const className = `text-xs uppercase tracking-[0.28em] transition ${
+
+            const className = `font-body whitespace-nowrap uppercase transition [font-size:clamp(9px,0.72vw,13px)] [letter-spacing:clamp(0.04em,0.12vw,1em)] ${
               active
-                ? 'text-[#F5EFE6]'
-                : 'text-[#D8C3A5] hover:text-[#D99A00]'
+                ? 'text-[#D9A300]'
+                : 'text-[#F5F5F5] hover:text-[#D9A300]'
             }`
-          
+
             if (link.external) {
               return (
                 <a
@@ -80,26 +67,43 @@ export default function Navbar() {
                 </a>
               )
             }
-          
+
             return (
               <Link key={link.href} href={link.href} className={className}>
                 {link.name}
               </Link>
             )
           })}
-        </div>
-      </nav>
+        </nav>
 
-      {/* Menú móvil desplegable */}
+        {/* Botón menú móvil/tablet */}
+        <button
+          className="ml-4 text-4xl text-[#D9A300] lg:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir menú"
+        >
+          {isOpen ? '×' : '☰'}
+        </button>
+      </div>
+
+      {/* Menú móvil */}
       {isOpen && (
         <motion.div
-          className="border-t border-white/10 bg-[#050505] px-8 py-6 md:hidden"
+          className="border-t border-[#D9A300]/50 bg-[#000000] px-8 py-7 lg:hidden"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
         >
           <div className="flex flex-col gap-6">
             {links.map((link) => {
+              const active = pathname === link.href
+
+              const className = `font-body text-base uppercase tracking-[0.18em] transition ${
+                active
+                  ? 'text-[#D9A300]'
+                  : 'text-[#F5F5F5] hover:text-[#D9A300]'
+              }`
+
               if (link.external) {
                 return (
                   <a
@@ -108,19 +112,19 @@ export default function Navbar() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setIsOpen(false)}
-                    className="text-base text-[#F5EFE6] transition hover:text-[#D99A00]"
+                    className={className}
                   >
                     {link.name}
                   </a>
                 )
               }
-            
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base text-[#F5EFE6] transition hover:text-[#D99A00]"
+                  className={className}
                 >
                   {link.name}
                 </Link>

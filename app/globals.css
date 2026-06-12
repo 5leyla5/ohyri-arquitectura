@@ -41,3 +41,59 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@font-face {
+  font-family: 'Anotherline';
+  src: url('/fonts/Anotherline.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CharterCustom';
+  src: url('/fonts/Charter-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'CalligraphyFL';
+  src: url('/fonts/CalligraphyFL.ttf') format('truetype');
+}
+
+:root {
+  --color-bg: #000000;
+  --color-surface: #0a0a0a;
+  --color-primary: #d9a300;
+  --color-primary-strong: #e0aa00;
+  --color-text: #f5f5f5;
+  --color-text-soft: #d8d8d8;
+  --color-border: #2a2a2a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'CharterCustom', serif;
+}
+
+.font-brand {
+  font-family: 'Anotherline', sans-serif;
+}
+
+.font-body {
+  font-family: 'CharterCustom', serif;
+}
+
+.font-script {
+  font-family: 'CalligraphyFL', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

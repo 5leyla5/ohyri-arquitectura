@@ -5,7 +5,7 @@ import Footer from '../components/Footer'
 import WhatsAppButton from '../components/WhatsAppButton'
 
 export const metadata: Metadata = {
-  title: 'OHY’RI Arquitectura',
+  title: 'HOY’RI Arquitectura',
   description:
     'Estudio de arquitectura enfocado en diseño, materialidad, funcionalidad y proyectos con identidad.',
 }
