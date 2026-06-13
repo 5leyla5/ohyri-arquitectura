@@ -24,13 +24,13 @@ export default function Navbar() {
 
   return (
     <header className="fixed left-0 top-0 z-50 w-full border-b border-[#D9A300] bg-[#000000] text-[#F5F5F5] shadow-2xl">
-      <div className="mx-auto flex h-36 max-w-7xl items-center justify-between px-5 sm:px-8 md:h-40 lg:px-10 xl:px-0">
+      <div className="mx-auto flex h-36 max-w-7xl items-center justify-between px-5 sm:px-8 md:h-40 lg:px-10 2xl:px-0">
         {/* Logo lado izquierdo */}
-        <Link href="/" className="flex items-center gap-1">
+        <Link href="/" className="flex shrink-0 items-center gap-4">
           <img
-            src="/gifs/terra.gif"
+            src="/logos/planta-final.png"
             alt="Ícono planta HOY’RI"
-            className="h-14 w-14 shrink-0 rounded-full border border-[#D9A300]/60 bg-[#F5F5F5] object-contain p-1 shadow-[0_0_18px_rgba(217,163,0,0.25)] md:h-16 md:w-16"
+            className="h-20 w-20 shrink-0 object-contain md:h-24 md:w-24"
           />
 
           <img
@@ -41,14 +41,14 @@ export default function Navbar() {
         </Link>
 
         {/* Separador dorado */}
-        <div className="mx-[clamp(0.75rem,2vw,2rem)] hidden h-20 w-px shrink-0 bg-[#D9A300]/70 lg:block" />
+        <div className="mx-8 hidden h-20 w-px shrink-0 bg-[#D9A300]/70 2xl:block" />
 
         {/* Navegación escritorio */}
-        <nav className="hidden min-w-0 flex-1 items-center justify-end gap-[clamp(0.45rem,1.2vw,2rem)] lg:flex">
+        <nav className="hidden flex-1 items-center justify-end gap-7 2xl:flex">
           {links.map((link) => {
             const active = pathname === link.href
 
-            const className = `font-body whitespace-nowrap uppercase transition [font-size:clamp(9px,0.72vw,13px)] [letter-spacing:clamp(0.04em,0.12vw,1em)] ${
+            const className = `font-body whitespace-nowrap text-[13px] uppercase tracking-[0.14em] transition ${
               active
                 ? 'text-[#D9A300]'
                 : 'text-[#F5F5F5] hover:text-[#D9A300]'
@@ -76,9 +76,9 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Botón menú móvil/tablet */}
+        {/* Botón menú móvil/tablet/notebook */}
         <button
-          className="ml-4 text-4xl text-[#D9A300] lg:hidden"
+          className="ml-6 text-4xl text-[#D9A300] 2xl:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Abrir menú"
         >
@@ -86,10 +86,10 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Menú móvil */}
+      {/* Menú móvil / pantallas medianas */}
       {isOpen && (
         <motion.div
-          className="border-t border-[#D9A300]/50 bg-[#000000] px-8 py-7 lg:hidden"
+          className="border-t border-[#D9A300]/50 bg-[#000000] px-8 py-7 2xl:hidden"
           initial={{ opacity: 0, y: -12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
